@@ -1,0 +1,36 @@
+<?php
+/**
+ * @file
+ *   Provides a custom slide-out block which presents block content and or custom views
+ *
+ * @author
+ *   David Morrison http://www.sacommunications.com
+ */
+ 
+ /**
+ * Implements hook_help.
+ *
+ * Displays help and module information.
+ */
+function custom_slidebox_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#custom_slidebox":
+      return '<p>' . t("A custom slide-out box that contains block content. Block content can be text based, code based or view based.") . '</p>';
+      break;
+  }
+}
+
+/**
+ * Implements hook_page_alter().
+ */
+function custom_slidebox_page_alter(&$page) {
+  if ($page['custom_slidebox']) {
+    drupal_add_js(drupal_get_path('module', 'custom_slidebox') . '/js/custom_slidebox.js');
+    drupal_add_css(drupal_get_path('module', 'custom_slidebox') . '/css/custom_slidebox.css');
+    $page['content']['custom_slidebox'] = array(
+      '#type' => 'markup',
+      '#markup' => '<div id="slidebox_trigger"></div>',
+      '#weight' => 99,
+    );
+  }
+}

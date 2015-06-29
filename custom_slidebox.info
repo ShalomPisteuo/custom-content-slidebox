@@ -1,0 +1,4 @@
+name = Custom Slidebox
+description = A custom slide-out box that contains block content
+core = 7.x
+package = Other

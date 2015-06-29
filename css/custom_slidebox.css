@@ -1,0 +1,24 @@
+#custom-slidebox a {
+  font-weight: bold;
+}
+
+#custom-slidebox {
+  width: 240px;
+  padding: 5px 10px 15px 10px;
+  background-color: #fff;
+  border-top: 3px solid #aaa;
+  position: fixed;
+  bottom: 0px;
+  right: -270px;
+  box-shadow: -2px 0px 5px #aaa;
+  z-index: 2;
+}
+
+#custom-slidebox h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom:20px;
+  background:#094765;
+  color:#fff;
+  font-size: inherit;
+}
